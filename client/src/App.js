@@ -1,10 +1,9 @@
-
-import './App.css';
+import TextEditor from "./TextEditor";
 
 function App() {
   return (
     <div className="App">
-      App
+     <TextEditor />
     </div>
   );
 }
