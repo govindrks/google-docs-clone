@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useEffect } from 'react'
 import Quill from 'quill'
 import 'quill/dist/quill.snow.css';
 
@@ -15,6 +15,12 @@ const TOOLBAR_OPTIONS = [
 ]
 
 export default function TextEditor() {
+  useEffect(() => {
+   const socket = io('http://localhost:3001')
+   return () => {
+    socket.disconnnect()
+   }
+  }, [])
   const wrapperRef = useCallback((wrapper) => {
     if (wrapper == null)  return
 
